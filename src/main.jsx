@@ -1,15 +1,16 @@
-import React, { StrictMode } from 'react'
+import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import {
   RouterProvider,
 } from "react-router-dom";
 import Router from './Router/Router';
+import AuthProvider from './Context/AuthContext/AuthProvider';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <React.StrictMode>
+    <AuthProvider>
       <RouterProvider router={Router} />
-    </React.StrictMode>
+    </AuthProvider>
   </StrictMode>,
 )
